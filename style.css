@@ -16,15 +16,14 @@
 html, body{margin: 0;padding: 0;min-height: 100vh;background-color: white;}
 
 header {
-    position: relative;
-    background-color: var(--nred);
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
 
     & nav{
         width: 100%;
-        position: absolute;
+        position: relative;
         top: 0;
         & div.icon{
             position: absolute;
@@ -114,7 +113,13 @@ header {
         & #login::after{content: none;}
         & #login:hover{cursor:initial}
     }
-    
+}
+header + section {
+    position: relative;
+    background-color: var(--nred);
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
 
     & div.white {
         background-color: #F2F4FD;
@@ -434,11 +439,6 @@ footer {
 
     header{
 
-        flex-direction: column;
-        justify-content: space-between;
-
-        padding: 61px 0 ;
-
         & nav{
             display: flex;
             align-items: center;
@@ -511,7 +511,14 @@ footer {
                 & a::after{right: 30px}
             }
         }
-        
+    }
+
+    header + section{
+
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding: 61px 0 ;
 
         & section.cartoes {
             position: relative;
@@ -564,10 +571,10 @@ footer {
             }
         }
 
-    }
+    
         
         & div.white{display: none;}
-
+    }
 
     
 
@@ -676,7 +683,7 @@ footer {
         --fwidth:100%
     }
 
-    header{
+    header + section{
 
         padding: 61px 0 20px 0 ;
 
